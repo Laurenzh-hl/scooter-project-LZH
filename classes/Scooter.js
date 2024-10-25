@@ -34,7 +34,7 @@ class Scooter {
     this.user = null;
   }
 
-  charge() {
+  chargeUp() { //changed name of function as same as property which didn't work.
     this.charge = 100;
   }
 
