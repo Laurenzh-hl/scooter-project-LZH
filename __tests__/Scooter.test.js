@@ -1,14 +1,17 @@
 const { describe, expect, it } = require("@jest/globals");
 const Scooter = require("../classes/Scooter.js");
+const User = require("../classes/User.js");
+
 
 describe("scooter.rent(user)", () => {
+  const u1 = new User("lauren24", "password123", 24);
   it.skip("checks a scooter out to a user", () => {
     // Arrange
     const s1 = new Scooter("Gloucester Road");
     // Act
-    s1.rent("lauren24");
+    s1.rent(u1);
     // Assert
-    expect(s1.user).toEqual("lauren24");
+    expect(s1.user).toEqual(u1);
   });
 
   it.skip("throws an error if battery dead or scooter broken", () => {
