@@ -4,21 +4,22 @@ const User = require("../classes/User.js");
 
 
 describe("scooter.rent(user)", () => {
-  const u1 = new User("lauren24", "password123", 24);
-  it.skip("checks a scooter out to a user", () => {
+  it("checks a scooter out to a user", () => {
     // Arrange
     const s1 = new Scooter("Gloucester Road");
+    const u1 = new User("lauren24", "password123", 24);
     // Act
     s1.rent(u1);
     // Assert
     expect(s1.user).toEqual(u1);
   });
 
-  it.skip("throws an error if battery dead or scooter broken", () => {
+  it("throws an error if battery dead or scooter broken", () => {
     // Arrange
     const s2 = new Scooter("Ash Road");
+    const u2 = new User("ell25", "password123", 25);
     function tryLowCharge() {
-      s2.rent("lauren24");
+      s2.rent(u2);
     }
     // Act
     s2.charge = 18;
@@ -32,7 +33,7 @@ describe("scooter.rent(user)", () => {
 });
 
 describe("scooter.dock(station)", () => {
-  it.skip("returns a scooter to a station", () => {
+  it("returns a scooter to a station", () => {
     // Arrange
     const s3 = new Scooter("Maple Road");
     // Act
@@ -43,7 +44,7 @@ describe("scooter.dock(station)", () => {
 });
 
 describe("scooter.chargeUp()", () => {
-  it.skip("charges a scooter", () => {
+  it("charges a scooter", () => {
     // Arrange
     const s4 = new Scooter("Maple Road");
     // Act
@@ -55,7 +56,7 @@ describe("scooter.chargeUp()", () => {
 });
 
 describe("scooter.repair()", () => {
-  it.skip("repairs a scooter", () => {
+  it("repairs a scooter", () => {
     // Arrange
     const s5 = new Scooter("Maple Road");
     // Act

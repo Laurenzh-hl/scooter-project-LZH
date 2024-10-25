@@ -2,7 +2,7 @@ const { describe, expect, it } = require("@jest/globals");
 const User = require("../classes/User.js");
 
 describe("user.login(password)", () => {
-  it.skip("logs a user in if the password is correct", () => {
+  it("logs a user in if the password is correct", () => {
     // Arrange
     const u1 = new User("lauren24", "password123", 24);
     // Act
@@ -11,7 +11,7 @@ describe("user.login(password)", () => {
     expect(u1.loggedIn).toBe(true);
   });
 
-  it.skip("throws an error if the password is incorrect", () => {
+  it("throws an error if the password is incorrect", () => {
     // Arrange
     const u2 = new User("josh98", "password321", 25);
     // Act
@@ -24,7 +24,7 @@ describe("user.login(password)", () => {
 });
 
 describe("user.logout()", () => {
-  it.skip("logs a user out", () => {
+  it("logs a user out", () => {
     // Arrange
     const u3 = new User("kate98", "password321", 26);
     // Act

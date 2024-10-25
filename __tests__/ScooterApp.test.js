@@ -1,17 +1,36 @@
-const { describe, expect, it } = require("@jest/globals");
+const { afterEach, describe, expect, it } = require("@jest/globals");
 const ScooterApp = require("../classes/ScooterApp.js");
 
+afterEach(() => {
+  ScooterApp.stations = {
+    "Ash Road": [],
+    "Maple Road": [],
+    "Gloucester Road": [],
+    "Cabot Circus": [],
+    "Harbourside": []
+  }
+
+  ScooterApp.registeredUsers = {}
+})
+
 describe("ScooterApp.registerUser(username, password, age)", () => {
-  it.skip("registers a new user if old enough", () => {
+  it("registers a new user if old enough", () => {
     // Arrange
+    const user = ScooterApp.registerUser("kbarker", "password1", 27);
     // Act
     // Assert
+    expect(ScooterApp.registeredUsers.kbarker).toBe(user);
   });
 
-  it.skip("throws an error if too young or already registered", () => {
+  it("throws an error if too young or already registered", () => {
     // Arrange
+    ScooterApp.registerUser("nakhlaq", "123password", 35);
     // Act
+    function attemptRegistration () {
+      ScooterApp.registerUser("nakhlaq", "123password", 14)
+    }
     // Assert
+    expect(attemptRegistration).toThrow();
   });
 });
 

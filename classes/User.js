@@ -20,4 +20,7 @@ class User {
   }
 }
 
+// let temp = new User ("lauren24", "password123", 24);
+
+// console.log(temp);
 module.exports = User;
